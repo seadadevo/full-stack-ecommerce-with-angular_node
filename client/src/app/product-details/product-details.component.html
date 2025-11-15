@@ -1,1 +1,35 @@
-<p>product-details works!</p>
+<div class="product-details container mt-5">
+  
+  <div class="details-wrapper">
+    
+
+    <div class="image-box">
+      <img [src]="productDetails?.image" [alt]="productDetails?.title">
+    </div>
+
+
+    <div class="content-box">
+      <h1 class="title">{{ productDetails?.title }}</h1>
+
+      <p class="description">
+        {{ productDetails?.description || 'No description available.' }}
+      </p>
+
+      <p class="category">
+        Category: <span>{{ productDetails?.category }}</span>
+      </p>
+
+      <h2 class="price">EGP {{ productDetails?.price }}</h2>
+
+      <div class="rating" *ngIf="productDetails?.rating">
+        ⭐ {{ productDetails.rating.rate }}  
+        <span class="count">({{ productDetails.rating.count }} reviews)</span>
+      </div>
+
+      <button class="btn btn-primary btn-lg add-btn mt-3">
+        <i class="fas fa-shopping-cart me-2"></i> Add to Cart
+      </button>
+    </div>
+
+  </div>
+</div>

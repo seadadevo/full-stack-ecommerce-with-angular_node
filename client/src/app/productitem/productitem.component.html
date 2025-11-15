@@ -1,0 +1,32 @@
+<div class="card h-100 shadow-sm product-card">
+  
+
+  <img 
+    [src]="product.image || 'https://placehold.co/400x300/f8f9fa/6c757d?text=No+Image'"
+    class="card-img-top product-image" 
+    [alt]="product.title">
+  
+  <div class="card-body d-flex flex-column">
+    
+    
+    <div class="mb-2">
+      
+      <h5 class="card-title" [title]="product.title">
+        {{ product.title }}
+      </h5>
+      
+      
+      <p class="card-text price h4 text-primary fw-bold">
+        {{ product.price | currency:'EGP' }}
+      </p>
+    </div>
+
+    
+    <button class="btn btn-primary mt-auto w-100 fw-bold">
+      <i class="fas fa-shopping-cart me-2"></i> Add to Cart
+    </button>
+    <a [routerLink]="['/productDetails' , product.id]" class="btn btn-secondary mt-2 w-100 fw-bold">
+        Details
+    </a>
+  </div>
+</div>

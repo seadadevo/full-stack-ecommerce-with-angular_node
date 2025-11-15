@@ -1,1 +1,58 @@
-<p>home works!</p>
+<div class="main">
+  <div class="main-swiper">
+    <swiper-container>
+      <swiper-slide>
+        <h3>makeup</h3>
+        <img src="assets/images/bg1.jpg" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <h3>Camera</h3>
+        <img src="assets/images/bg2.jpg" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <h3>perfume</h3>
+        <img src="assets/images/bg3.jpg" alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <h3>perfume</h3>
+        <img src="assets/images/bg4.jpg" alt="" />
+      </swiper-slide>
+    </swiper-container>
+
+    <div class="images">
+      <img src="assets/images/bg1.jpg" alt="" />
+      <img src="assets/images/bg2.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="container mt-4 categories">
+    @for(category of allCategories; track $index) {
+    <div class="category-item">
+      <p>{{ category }}</p>
+    </div>
+    }
+  </div>
+
+
+   <div class="row justify-content-center mb-5">
+    <div class="col-md-6">
+      <input
+        type="text"
+        [(ngModel)]="term"
+        class="form-control rounded-pill px-4 py-3 shadow-sm w-100"
+        placeholder="Search for products..."
+      />
+    </div>
+  </div>
+
+
+ <div class="row g-4 products mt-4 container mx-auto">
+  @for (product of products |  search: term; track $index) {
+    <div class="col-6 col-md-4 col-lg-3">
+      <app-productitem [product]="product"></app-productitem>
+    </div>
+  }
+</div>
+
+  
+</div>
