@@ -1,0 +1,17 @@
+<form (ngSubmit)="submitLoginForm(loginrForm)" [formGroup]="loginrForm">
+    <label for="email">email</label>
+    <input id="email" type="text" formControlName="email">
+    <label for="password">password</label>
+    <input id="password" type="text" formControlName="password">
+
+
+    <button
+      [disabled]="loginrForm.invalid || isLoading"
+      type="submit"
+      class="btn btn-info">
+      <span>Login</span>
+      @if (isLoading) {
+        <i class="fas fa-spinner fa-spin"></i>
+      }
+    </button>
+</form>

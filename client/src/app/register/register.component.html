@@ -1,0 +1,19 @@
+<form (ngSubmit)="submitRegisterForm(registerForm)" [formGroup]="registerForm">
+    <label for="name">name</label>
+    <input id="name" type="text" formControlName="name">
+    <label for="email">email</label>
+    <input id="email" type="text" formControlName="email">
+    <label for="password">password</label>
+    <input id="password" type="text" formControlName="password">
+
+
+    <button
+      [disabled]="registerForm.invalid || isLoading"
+      type="submit"
+      class="btn btn-info">
+      <span>Register</span>
+      @if (isLoading) {
+        <i class="fas fa-spinner fa-spin"></i>
+      }
+    </button>
+</form>
