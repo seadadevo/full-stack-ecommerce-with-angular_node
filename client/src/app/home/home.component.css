@@ -89,3 +89,15 @@
 .category-item:hover p {
     color: #fff;
 }
+
+.pagination-wrapper .btn {
+  min-width: 42px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.pagination-wrapper .btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
