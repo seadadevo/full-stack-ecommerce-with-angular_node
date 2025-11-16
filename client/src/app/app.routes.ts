@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { authGuard } from './auth.guard';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ export const routes: Routes = [
     {path: 'categories',canActivate: [authGuard], component: CategoriesComponent},
     {path: 'cart',canActivate: [authGuard], component: CartComponent},
     {path: 'favorites', canActivate: [authGuard],component: FavouriteComponent},
+    {path: 'checkout', canActivate: [authGuard],component: CheckoutComponent},
     {path: 'productDetails/:id', canActivate: [authGuard],component: ProductDetailsComponent},
     
     
