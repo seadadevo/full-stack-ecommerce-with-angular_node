@@ -1,1 +1,39 @@
-<p>products works!</p>
+<div class="row justify-content-center mb-5 mt-5">
+    <div class="col-md-6">
+      <input
+        type="text"
+        [(ngModel)]="term"
+        class="form-control rounded-pill px-4 py-3 shadow-sm w-100"
+        placeholder="Search for products..."
+      />
+    </div>
+  </div>
+
+
+ <div class="row g-4 products mt-4 container mx-auto">
+  @for (product of paginatedProducts | search: term; track $index) {
+    <div class="col-6 col-md-4 col-lg-3">
+      <app-productitem [product]="product"></app-productitem>
+    </div>
+  }
+
+</div>
+
+<!-- Pagination -->
+<div class="pagination-wrapper d-flex justify-content-center mt-4 gap-2">
+  <button class="btn btn-outline-primary" (click)="prevPage()" [disabled]="currentPage === 1">
+    Prev
+  </button>
+
+  <button 
+    *ngFor="let page of getPageNumbers()" 
+    class="btn" 
+    [ngClass]="{'btn-primary text-white': page === currentPage, 'btn-outline-primary': page !== currentPage}"
+    (click)="goToPage(page)">
+    {{ page }}
+  </button>
+
+  <button class="btn btn-outline-primary" (click)="nextPage()" [disabled]="currentPage === getTotalPages()">
+    Next
+  </button>
+</div>
