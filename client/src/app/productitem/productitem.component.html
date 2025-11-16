@@ -22,7 +22,7 @@
     </div>
 
     
-    <button class="btn btn-primary mt-auto w-100 fw-bold">
+    <button (click)="addToCartList(product)" class="btn btn-primary mt-auto w-100 fw-bold">
       <i class="fas fa-shopping-cart me-2"></i> Add to Cart
     </button>
     <a [routerLink]="['/productDetails' , product.id]" class="btn btn-secondary mt-2 w-100 fw-bold">

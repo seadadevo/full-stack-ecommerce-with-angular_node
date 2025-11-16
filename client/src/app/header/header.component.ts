@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit{
   isLogin: boolean = false;
-  constructor(private _authService: AuthService){}
+  cartItemsLength: number = 0;
+  constructor(private _authService: AuthService, private _CartService: CartService){}
 
   ngOnInit(): void {
     this._authService.userData.subscribe({
@@ -23,6 +25,12 @@ export class HeaderComponent implements OnInit{
         }
       }
     })
+
+    this._CartService.cartItems$.subscribe({
+      next: (itemsList) => {
+        this.cartItemsLength = itemsList.length;
+      }
+    });
   }
 
   logOut(){

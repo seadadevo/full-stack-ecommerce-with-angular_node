@@ -4,6 +4,7 @@ import { SearchPipe } from '../search.pipe';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductitemComponent } from '../productitem/productitem.component';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   currentPage:number = 1
   productsPerPage:number = 6;
 
-  constructor(private _ProductsService: ProductsService){}
+  constructor(private _ProductsService: ProductsService, private _CartService:CartService){}
 
   ngOnInit(): void {
     this._ProductsService.getAllProducts().subscribe({
