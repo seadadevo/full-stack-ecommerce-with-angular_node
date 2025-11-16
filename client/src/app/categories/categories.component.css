@@ -1,0 +1,61 @@
+/* -------------------------
+   Category Card Styling
+------------------------- */
+
+.category-card {
+  border: 2px solid transparent; /* بنجهزه عشان الـ active state */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden; /* عشان الصورة متطلعش بره الحواف */
+  border-radius: 0.75rem;
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* نرفعه لفوق شوية */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ده الـ active state لما نختار الكارت 
+*/
+.category-card.active {
+  border-color: var(--bs-primary); /* لون البوتستراب الأساسي (الأزرق) */
+  box-shadow: 0 0.5rem 1rem rgba(0, 87, 255, 0.2) !important;
+  transform: translateY(-5px);
+}
+
+/* بنثبت ارتفاع الصورة عشان كل الكروت تبقى متساوية
+*/
+.category-image {
+  height: 180px;
+  object-fit: cover; /* أهم كود عشان الصور متمطش */
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.category-card.active .card-title {
+  color: var(--bs-primary); /* بنغير لون الاسم برضه */
+}
+
+/* -------------------------
+   General Styling
+------------------------- */
+
+.section-title {
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* يغطي على الـ border-bottom */
+  left: 0;
+  width: 70px; /* خط صغير تحت العنوان */
+  height: 3px;
+  background-color: var(--bs-primary);
+}

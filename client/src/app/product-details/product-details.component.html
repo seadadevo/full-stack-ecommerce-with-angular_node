@@ -21,7 +21,7 @@
 
       <h2 class="price">EGP {{ productDetails?.price }}</h2>
 
-      <div class="rating" *ngIf="productDetails?.rating">
+      <div class="rating" *ngIf="productDetails.rating">
         ⭐ {{ productDetails.rating.rate }}  
         <span class="count">({{ productDetails.rating.count }} reviews)</span>
       </div>

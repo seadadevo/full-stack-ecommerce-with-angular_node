@@ -42,6 +42,11 @@
         </li>
         } @if(isLogin) {
         <li class="nav-item cart">
+          <span class="favourite cartItems">{{favouriteItemsLength}}</span>
+          <a class="nav-link" routerLink="favorites"
+          ><i class="fas fa-heart"></i></a>
+        </li>
+        <li class="nav-item cart">
           <span class="cartItems">{{cartItemsLength}}</span
             >
           <a class="nav-link" routerLink="cart"

@@ -8,8 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
-import { FavoritesComponent } from './favorites/favorites.component';
 import { authGuard } from './auth.guard';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,7 +18,7 @@ export const routes: Routes = [
     {path: 'products', canActivate: [authGuard],component: ProductsComponent},
     {path: 'categories',canActivate: [authGuard], component: CategoriesComponent},
     {path: 'cart',canActivate: [authGuard], component: CartComponent},
-    {path: 'favorites', canActivate: [authGuard],component: FavoritesComponent},
+    {path: 'favorites', canActivate: [authGuard],component: FavouriteComponent},
     {path: 'productDetails/:id', canActivate: [authGuard],component: ProductDetailsComponent},
     
     

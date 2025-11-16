@@ -16,4 +16,8 @@ export class ProductsService {
   getProductDetails(id:number):Observable<any> {
     return this._httpClient.get(`https://fakestoreapi.com/products/${id}`)
   }
+
+  getCategoriesProducts(category:string):Observable<any>{ 
+    return this._httpClient.get(`https://fakestoreapi.com/products/category/${category}`)
+  }
 }
